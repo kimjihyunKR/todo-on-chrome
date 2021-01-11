@@ -1,5 +1,5 @@
 const progressBox = document.querySelector('.progressBox'),
-      progresText = progressBox.querySelector('span'),
+      progressText = progressBox.querySelector('span'),
       allTodoText = progressBox.querySelector('.allTodo'),
       progress = progressBox.querySelector('#progress'),
       bar = progressBox.querySelector('#bar');
@@ -24,7 +24,7 @@ function calDoneRate(){
   })
   rate =  doneNum / allNum * 100;
   bar.style.width = rate + '%';
-  progresText.innerText = `${doneNum}`
+  progressText.innerText = `${doneNum}`;
   allTodoText.innerHTML = `/ ${allNum}`
 }
 
