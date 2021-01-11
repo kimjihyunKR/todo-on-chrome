@@ -1,9 +1,15 @@
 const form = document.querySelector('.js-form'); 
-const input = document.querySelector('input');
+const input = document.querySelector('#userName');
 const greeting = document.querySelector('.js-greeting');
 
 const USER_LS = 'currentUser';
 const SHOWING_CN = 'showing';
+
+function editUserName(){
+  localStorage.removeItem(USER_LS);         // 저장된 이름을 지우고
+  greeting.classList.remove(SHOWING_CN);    // 인사 문구를 안보이게
+  askForName();                             //
+}
 
 function saveName(text) {
   localStorage.setItem(USER_LS, text);
@@ -22,9 +28,14 @@ function askForName() {
 }
 
 function paintGreeting(text){
+  const editButton = document.createElement('button');
+  editButton.innerText = '✍🏻';
+  editButton.addEventListener('click',editUserName);
+
   form.classList.remove(SHOWING_CN);    // form 안보이게 
   greeting.classList.add(SHOWING_CN);   // greeing이 보이게
-  greeting.innerText = `Hello ${text}`;
+  greeting.innerText = `Hello ${text} `;
+  greeting.appendChild(editButton);
 }
 
 function loadName(){
@@ -32,7 +43,6 @@ function loadName(){
   if( currentUser === null ) {
     askForName();
   } else {
-    //she is
     paintGreeting(currentUser);
   }
 }

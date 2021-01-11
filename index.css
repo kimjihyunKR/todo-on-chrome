@@ -1,5 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import'css/anim.css';
+@import'css/reset.css';
+@import'css/color.css';
+
+* {
+  color: var(--defaultFontColor);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
 body{
-  background-color: #0a3d62;
+  background-color: var(--bgColor);
+  /* background-color: var(--dark); */
+}
+
+
+.container {
+  max-width: 1000px;
+  height: 100vh;
+  padding: 0 20px;
+  margin: 0 auto;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoBox {
+  flex: 2;
+  text-align: center;
+  margin-right: 20px;
+}
+.js-clock span {
+  margin-bottom: 10px;
+}
+.js-clock h1 {
+  font-size: 4.5vw;
+  margin: 10px 0;
+  color : var(--pointColor);
+}
+
+.progressBox{
+  width: 60%;
+  margin: 25px auto;
+}
+
+#progress {
+  margin: 10px 0;
+  width: 100%;
+  background-color: var(--done);
+}
+
+#bar {
+  width: 1%;
+  height: 6px;
+  background-color: var(--pointColor);
+  transition: width 0.3s linear;
 }
 
 .form,
@@ -11,22 +70,127 @@ body{
   display: block;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.todoBox{
+  flex: 3;
+  height: 40vh;
+  
+}
+.js-toDoList{
+  height: 100%;
+  /* overflow-y: scroll; */
+  padding: 10px;
+}
+
+.js-toDoList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.js-toDoList li:last-child {
+  margin-bottom: 0;
+}
+
+.js-toDoList li input[type='checkbox']{
+  margin-right: 10px;
+}
+
+.js-toDoList .done{
+  color : var(--done);
+}
+.done span, .done button {
+  color: var(--done);
+}
+.done span {
+  text-decoration: line-through;
+}
+.allTodo{
+  color: var(--done);
+}
+
+.delBtn{
+  font-size: 1rem;
+  line-height: 1rem;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 10px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.delBtn:hover {
+  border: 1px solid var(--defaultFontColor);
+  border-radius: 100%;
+}
+
+.done .delBtn:hover {
+  border: 1px solid var(--done);
 }
 
 
-.bgImg{
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.searchBox{
+  display: flex;
+  border: solid 1px var(--pointColor);
+  margin-bottom: 1.3rem;
+}
+.searchBox input {
+  flex: 1;
+}
+.inputField{
   width: 100%;
-  height: 100%;
-  z-index: -2;
-  animation: fadeIn .5s linear;
+  border-bottom: solid 1px var(--pointColor);
+}
+
+.nameField {
+  text-align: center;
+  border-bottom: solid 1px #000;
+}
+
+.js-light{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 100%;
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.js-light img{
+  display: inline-block;
+  text-align: center;
+  width: 12px;
+  height: 12px;
+}
+
+.js-light:hover{
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.55);
+}
+
+
+@media screen and (max-width : 768px) {
+  /* tablet & mobile */
+  .container {
+    max-width: none;
+    flex-direction: column;
+  }
+  .infoBox {
+    width: 70vw;
+    flex :0 ;
+    margin: 70px 0;
+  }
+
+  .js-clock h1 {
+    font-size: 3.5rem;
+  }
+
+  .js-toDoList {
+    height: fit-content;
+    overflow: auto;
+  }
+  
 }

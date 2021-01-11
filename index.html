@@ -7,28 +7,67 @@
   <title>momentom</title>
 </head>
 <body>
-  <div class="js-clock">
-    <h1>
-      00:00
-    </h1>
+  <div class="container">
+
+    <div class="infoBox">
+      <div class="js-clock">
+        <span>
+          0000.00.00 Mon
+        </span>
+        <h1>
+          00:00:00
+        </h1>
+      </div>
+      <span class="js-weather"></span>
+      
+      <div class="progressBox">
+        <span></span>
+        <span class="allTodo">/ 0</span>
+        <div id="progress">
+          <div id="bar"></div>
+        </div>
+      </div>
+
+      <div class="userBox">
+        <form class="js-form form">
+          <input type="text" id="userName" placeholder="what is your name?" class="nameField">
+        </form>
+        <h4 class="js-greeting greeting nameFeild"></h4>
+      </div>
+    </div>
+
+
+    <div class="todoBox">
+      <form class="js-search searchBox">
+        <input type="text" placeholder="serach">
+        <select name="searchEngine" id="searchEngine">
+          <option value="google">google</option>
+          <option value="naver">naver</option>
+          <option value="medium">medium</option>
+          <option value="branch">branch</option>
+        </select>
+      </form>
+
+      <form class="js-toDoForm inputField">
+        <input type="text" placeholder="Write a to do" >
+      </form>
+    
+      <ul class="js-toDoList">
+      </ul>
+    </div>
+    
+    <button class="js-light">
+      <img src="/img/moon-b.png" alt="light togle btn">
+    </button>
+    
   </div>
-  <form class="js-form form">
-    <input type="text" name="" id="" placeholder="what is your name?">
-  </form>
-  <h4 class="js-greeting greeting"></h4>
-  <form class="js-toDoForm">
-    <input type="text" placeholder="Write a to do" >
-  </form>
+  
 
-  <ul class="js-toDoList">
-  </ul>
-
-  <span class="js-weather"></span>
-
-  <script src="clock.js"></script>
-  <script src="greeting.js"></script>
-  <script src="todo.js"></script>
-  <script src="bg.js"></script>
-  <script src="weather.js"></script>
+  <script src="src/clock.js"></script>
+  <script src="src/greeting.js"></script>
+  <script src="src/todo.js"></script>
+  <script src="src/weather.js"></script>
+  <script src="src/search.js"></script>
+  <script src="src/light.js"></script>
 </body>
 </html>
