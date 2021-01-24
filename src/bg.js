@@ -9,7 +9,7 @@ function paintImage(imgNumber){
   const div = document.createElement("div");
   
   div.classList.add('bgImg');
-  const urlString = "url(../img/" + imgNumber +".jpg)";
+  const urlString = "url(img/" + imgNumber +".jpg)";
   div.style.backgroundImage = urlString;
   body.appendChild(div);
   //console.log(imgNumber, div.style.backgroundImage);
