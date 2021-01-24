@@ -33,11 +33,11 @@ function doneTodo(event){
   const li = checkBox.parentNode;
   const toDo = toDos[li.id];
   if(event.target.checked){
-    console.log('checked')
+    //console.log('checked')
     li.classList.add('done');
     toDo.done = true;
   } else {
-    console.log('unchecked')
+    //console.log('unchecked')
     li.classList.remove('done');
     toDo.done = false;
   }

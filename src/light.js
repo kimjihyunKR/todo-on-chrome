@@ -8,7 +8,7 @@ const DARK_COLOR = '#252935',
 
 function handleLight(event){
   const isDark = lightBtn.classList.toggle('dark');
-  console.log(isDark);
+  //console.log(isDark);
 
   if(isDark){
     body.style.setProperty('--bgColor', DARK_COLOR);

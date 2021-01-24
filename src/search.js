@@ -25,8 +25,6 @@ function handleSubmit(event) {
       location.href = BRANCH + keyword;
       break;
   }
-  console.log(engine, keyword);
-  
 }
 
 function init(){
