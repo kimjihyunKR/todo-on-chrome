@@ -1,5 +1,4 @@
 const body = document.querySelector('body');
-
 const IMG_NUMBER = 3;
 
 function handleImgLoad(){
@@ -7,10 +6,13 @@ function handleImgLoad(){
 }
 
 function paintImage(imgNumber){
-  const img = new Image();
-  img.src = `img/${imgNumber}.jpg`;
-  img.classList.add('bgImg');
-  body.appendChild(img);
+  const div = document.createElement("div");
+  
+  div.classList.add('bgImg');
+  const urlString = "url(../img/" + imgNumber +".jpg)";
+  div.style.backgroundImage = urlString;
+  body.appendChild(div);
+  //console.log(imgNumber, div.style.backgroundImage);
   //api 일때 필요한 코드
   //img.addEventListener('loadend', handleImgLoad);
 }
