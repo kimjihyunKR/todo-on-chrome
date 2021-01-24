@@ -3,5 +3,5 @@
   --defaultFontColor :      #252935 ;
   --pointColor :            #252935;
   --dark :                  #252935 ;
-  --done :                  #ccc;
+  --done :                  rgba(0, 0, 0, 0.2);
 }
